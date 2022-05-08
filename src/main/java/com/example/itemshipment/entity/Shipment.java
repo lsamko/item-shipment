@@ -28,19 +28,21 @@ public class Shipment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Basic
+    @Column(nullable = false, length = 50)
     @Transient
     private ShipmentStatus status;
 
     @Basic
-    @Column(nullable = false, length = 25)
+    @Column(nullable = false, length = 50)
     private String managerId;
 
     @Basic
-    @Column(nullable = false, length = 25)
+    @Column(nullable = false, length = 50)
     private String driverId;
 
     @Basic
-    @Column(name = "DATE", nullable = false)
+    @Column(nullable = false)
     private LocalDateTime deadlineDate;
 
     @Override
