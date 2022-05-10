@@ -9,7 +9,7 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface ShipmentMapper {
 
-    @Mapping(target = "managerId", expression = "java(java.util.UUID.randomUUID().toString())")
+    @Mapping(target = "managerId")
     Shipment fromRequestDtoToEntity(ShipmentRequestDto shipmentRequestDto);
 
     ShipmentResponseDto fromEntityToResponseDto(Shipment shipment);
