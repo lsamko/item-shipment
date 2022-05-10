@@ -3,6 +3,7 @@ package com.example.itemshipment.service.implementation;
 import com.example.itemshipment.dto.ShipmentRequestDto;
 import com.example.itemshipment.dto.ShipmentResponseDto;
 import com.example.itemshipment.entity.Shipment;
+import com.example.itemshipment.exception.ShipmentNotFoundException;
 import com.example.itemshipment.mapper.ShipmentMapper;
 import com.example.itemshipment.repository.ShipmentRepository;
 import com.example.itemshipment.service.ShipmentService;
@@ -21,5 +22,12 @@ public class ShipmentServiceImpl implements ShipmentService {
         Shipment shipment = shipmentMapper.fromRequestDtoToEntity(shipmentRequestDto);
         Shipment shipmentToSave = shipmentRepository.save(shipment);
         return shipmentMapper.fromEntityToResponseDto(shipmentToSave);
+    }
+
+    @Override
+    public ShipmentResponseDto findById(String uuid) {
+        Shipment shipment = shipmentRepository.findShipmentById(uuid)
+            .orElseThrow(() -> new ShipmentNotFoundException("Could not find shipment: " + uuid));
+        return shipmentMapper.fromEntityToResponseDto(shipment);
     }
 }

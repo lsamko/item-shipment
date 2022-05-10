@@ -3,8 +3,6 @@ package com.example.itemshipment.dto;
 import com.example.itemshipment.helpers.ShipmentStatus;
 import com.sun.istack.NotNull;
 import java.time.LocalDateTime;
-import javax.persistence.Basic;
-import javax.persistence.Column;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
