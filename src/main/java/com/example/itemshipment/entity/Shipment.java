@@ -22,6 +22,17 @@ import lombok.ToString;
 @Setter
 @ToString
 
+/**
+ *
+ * Provide information about shipments.
+ * All parameters are required.
+ *
+ * @param status Provides information what is the status of the shipment.
+ * @param managerId Specifies the info who is the manager of shipment
+ * @param driverId Specifies the info who is the driver of shipment
+ * @param deadlineDate The date till what shipment should be delivered
+ */
+
 public class Shipment {
 
     @Id
