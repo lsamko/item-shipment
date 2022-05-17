@@ -1,6 +1,6 @@
 package com.example.itemshipment.entity;
 
-import com.example.itemshipment.helpers.ShipmentStatus;
+import com.example.itemshipment.domain.ShipmentStatus;
 import java.time.LocalDateTime;
 import java.util.Objects;
 import javax.persistence.Basic;
@@ -12,7 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.Transient;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 

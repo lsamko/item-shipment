@@ -1,6 +1,6 @@
 package com.example.itemshipment.dto;
 
-import com.example.itemshipment.helpers.ShipmentStatus;
+import com.example.itemshipment.domain.ShipmentStatus;
 import java.time.LocalDateTime;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,8 +1,9 @@
 package com.example.itemshipment.dto;
 
-import com.example.itemshipment.helpers.ShipmentStatus;
+import com.example.itemshipment.domain.ShipmentStatus;
 import com.sun.istack.NotNull;
 import java.time.LocalDateTime;
+import javax.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,12 +13,19 @@ public class ShipmentRequestDto {
     @NotNull
     private ShipmentStatus status;
 
-    @NotNull
+    @NotBlank
     private String managerId;
 
-    @NotNull
+    @NotBlank
     private String driverId;
 
     @NotNull
     private LocalDateTime deadlineDate;
+
+    public ShipmentRequestDto(ShipmentStatus status, String managerId, String driverId, LocalDateTime deadlineDate) {
+        this.status = status;
+        this.managerId = managerId;
+        this.driverId = driverId;
+        this.deadlineDate = deadlineDate;
+    }
 }

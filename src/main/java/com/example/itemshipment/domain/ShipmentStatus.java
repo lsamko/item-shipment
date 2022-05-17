@@ -1,4 +1,4 @@
-package com.example.itemshipment.helpers;
+package com.example.itemshipment.domain;
 
 /**
  * Provides a possibility to operate with shipment's status.

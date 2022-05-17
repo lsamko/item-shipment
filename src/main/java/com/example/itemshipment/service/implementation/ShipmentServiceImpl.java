@@ -26,8 +26,8 @@ public class ShipmentServiceImpl implements ShipmentService {
 
     @Override
     public ShipmentResponseDto findById(String uuid) {
-        Shipment shipment = shipmentRepository.findShipmentById(uuid)
+        return shipmentRepository.findShipmentById(uuid).
+            map(shipmentMapper::fromEntityToResponseDto)
             .orElseThrow(() -> new ShipmentNotFoundException("Could not find shipment: " + uuid));
-        return shipmentMapper.fromEntityToResponseDto(shipment);
     }
 }
